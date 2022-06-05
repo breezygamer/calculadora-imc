@@ -25,4 +25,10 @@ function calcular(){
     }else if(imc = 0){
         mensagem = "<p>digite algum numero</p>"
     }
+    
+    document.getElementById('resultado').innerHTML = "<p>Seu imc é: <p/>"+imc.toFixed(1)+mensagem;
+    
+
+    
+    
 }
