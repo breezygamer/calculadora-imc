@@ -1,30 +1,37 @@
+let btnCalcular = document.querySelector('.btn-calcular');
 
 
-let nome = document.getElementById('nome');
-let altura = document.getElementById('altura');
-let peso = document.getElementById('peso');
-
-function calcular(){
-    let pesoValue = peso.value;
-    let alturaValue = altura.value/100;
-
-    let imc = pesoValue/(alturaValue*alturaValue);
-
-    if(imc <= 18.5){
-        mensagem = "<p>voce esta abaixo do peso</p>";
-    }else if(imc >= 18.6 && imc <=24.9){
-        mensagem = "<p>e voce esta com o peso ideal</p>";
-    }else if(imc >= 25 && imc <=29.9){
-        mensagem = "<p>voce esta levemente acima do peso</p>"
-    }else if(imc >=30 && imc <=34.9){
-        mensagem = "<p>voce esta com obesidade grau 1</p>"
-    }else if(imc <= 35 && imc <=39.9){
-        mensagem = "<p>voce esta Obesidade grau 2</p>"
-    }else if(imc > 40){
-        mensagem = "<p>voce esta perto da morte kkkkkk</p>"
-    }else if(imc = 0){
-        mensagem = "<p>digite algum numero</p>"
-    }
+function imc(){
+    let nome = document.querySelector('#nome').value;
+    let altura = document.querySelector('#altura').value;
+    let peso = document.querySelector('#peso').value;
+    let resultado = document.querySelector('#resultado');
     
-    document.getElementById('resultado').innerHTML = "<p>Seu imc é: <p/>"+imc.toFixed(1)+mensagem;
+    if(nome !== "" && altura !== "" && peso !== ""){
+        
+        const valorIMC = (peso / (altura * altura)).toFixed(1);
+
+        let classificacao = '';
+
+        if (valorIMC < 18.5){
+            classificacao = 'abaixo do peso';
+        }else if(valorIMC < 25){
+            classificacao = 'com peso ideal, Parabens !!!';
+        }else if(valorIMC < 30){
+            classificacao = 'levemente acima do peso';
+        }else if(valorIMC <35){
+            classificacao = 'com obesidade grau 1.';
+        }else if(valorIMC < 40){
+            classificacao = 'com obesidade grau 2';
+        }else{
+            classificacao = 'com obesidade grau 3. Cuidado!!!'
+        }
+
+        resultado.textContent = `${nome} seu IMC é ${valorIMC} e voce esta ${classificacao}`;
+    }else{
+        resultado.textContent = 'Preencha todos os campos'
+    }
+
 }
+
+btnCalcular.addEventListener('click', imc, false);

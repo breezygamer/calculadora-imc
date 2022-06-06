@@ -59,8 +59,13 @@ h1{
     width: 300px;
     height: 200px;
     margin-top: 30px;
+    padding: 10px;
     border-radius: 10px;
     background-color: black;
     box-shadow: 0 0 1em black;
     color: white;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    
 }
