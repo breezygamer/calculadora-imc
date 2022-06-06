@@ -29,6 +29,6 @@ function calcular(){
     document.getElementById('resultado').innerHTML = "<p>Seu imc é: <p/>"+imc.toFixed(1)+mensagem;
     
 
-    
+    //vou fazer um merge para a main
     
 }
