@@ -30,5 +30,7 @@ function calcular(){
     
 
     //vou fazer um merge para a main
-    //teste 
+    //teste
+    
+    
 }
